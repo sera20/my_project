@@ -1,49 +1,11 @@
 import { useState } from 'react';
 import './App.css'; 
 
-function App() {
-  const [num1, setNum1] = useState("");
-  const [num2, setNum2] = useState("");
-  const [operation, setOperation] = useState(null);
-  const [result, setResult] = useState(null);
+const App = () = > {
+  const [n1, n2] = useState(0);
 
-  function handleOperation(op) {
-    setOperation(op);
-  }
-
-  function calculateResult() {
-    if (operation && num1 !== "" && num2 !== "") {
-      const n1 = Number(num1);
-      const n2 = Number(num2);
-      let res = null;
-
-      switch (operation) {
-        case "+":
-          res = n1 + n2;
-          break;
-        case "-":
-          res = n1 - n2;
-          break;
-        case "*":
-          res = n1 * n2;
-          break;
-        case "/":
-          res = n2 !== 0 ? n1 / n2 : "Cannot divide by zero";
-          break;
-        default:
-          res = "Invalid operation";
-      }
-
-      setResult(res);
-    }
-  }
-
-  function handleReset() {
-    setNum1("");
-    setNum2("");
-    setOperation(null);
-    setResult(null);
-  }
+  function Caloperation() {
+    if 
 
   return (
     <div className="calculator-container">
