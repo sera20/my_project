@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css'; // Import external CSS file
+import './App.css'; 
 
 function App() {
   const [num1, setNum1] = useState("");
