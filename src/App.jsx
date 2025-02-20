@@ -1,11 +1,51 @@
 import { useState } from 'react';
-import './App.css'; 
+import './App.css'; // Make sure you create an appropriate CSS file for styling
 
-const App = () = > {
-  const [n1, n2] = useState(0);
+const App = () => {
+  // State initialization
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
+  const [result, setResult] = useState(null);
+  const [operation, setOperation] = useState('');
 
-  function Caloperation() {
-    if 
+  // Function to handle the operation type
+  const handleOperation = (op) => {
+    setOperation(op);
+  };
+
+  // Function to calculate the result
+  const calculateResult = () => {
+    let calcResult;
+    switch (operation) {
+      case '+':
+        calcResult = num1 + num2;
+        break;
+      case '-':
+        calcResult = num1 - num2;
+        break;
+      case '*':
+        calcResult = num1 * num2;
+        break;
+      case '/':
+        if (num2 !== 0) {
+          calcResult = num1 / num2;
+        } else {
+          calcResult = 'Error: Division by zero';
+        }
+        break;
+      default:
+        calcResult = null;
+    }
+    setResult(calcResult);
+  };
+
+  // Function to reset the inputs and result
+  const handleReset = () => {
+    setNum1(0);
+    setNum2(0);
+    setResult(null);
+    setOperation('');
+  };
 
   return (
     <div className="calculator-container">
@@ -25,19 +65,20 @@ const App = () = > {
         className="input-field"
       />
       <div className="button-container">
-        <button onClick={() => handleOperation("+")}> + </button>
-        <button onClick={() => handleOperation("-")}> - </button>
-        <button onClick={() => handleOperation("*")}> * </button>
-        <button onClick={() => handleOperation("/")}> / </button>
+        <button onClick={() => handleOperation('+')}>+</button>
+        <button onClick={() => handleOperation('-')}>-</button>
+        <button onClick={() => handleOperation('*')}>*</button>
+        <button onClick={() => handleOperation('/')}>/</button>
         <button onClick={calculateResult}>=</button>
-        <button onClick={handleReset} className="reset-button"> C </button>
+        <button onClick={handleReset} className="reset-button">C</button>
       </div>
       {result !== null && <h2>Result: {result}</h2>}
     </div>
   );
-}
+};
 
 export default App;
+
 
 
 
