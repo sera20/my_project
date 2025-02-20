@@ -3,16 +3,16 @@ import { useState } from 'react';
 function App() {
   const [count, setCount] = useState(0);
 
-  function hanldeIncrement(){
+  function hanldeIncrement() {
     setCount(count + 1);
   }
   
-  function handleReset(){
+  function handleReset() {
     setCount(0)
   }
 
-  function handleDecrement(){
-    if (count !== 0){
+  function handleDecrement() {
+    if (count !== 0) {
       setCount(count - 1);
     }
   }
