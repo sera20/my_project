@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-function App(){
+function App() {
   const [count, setCount] = useState(0);
 
   function hanldeIncrement(){
-    setCount (count + 1);
+    setCount(count + 1);
   }
   
   function handleReset(){
@@ -18,8 +18,9 @@ function App(){
   }
   
   return <div>
-        <button onClick={handleIncrement}>Increment</button>
-     <button onClick={handleReset}>Reset</button>
+    <h1>The Number: {count} </h1>
+    <button onClick={handleIncrement}>Increment</button>
+    <button onClick={handleReset}>Reset</button>
     <button onClick={handleDecrement}>Decrement</button>
     </div>
 
